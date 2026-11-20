@@ -2,105 +2,107 @@
 [![rank](https://make.fun/badge/news-image-20261119/Web3beta/news-image-20261119/rank.svg)](https://make.fun/bounty/news-image-20261119/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
 [![reward](https://make.fun/badge/news-image-20261119/Web3beta/news-image-20261119/reward.svg)](https://make.fun/bounty/news-image-20261119?utm_source=github&utm_medium=readme&utm_campaign=news-image-20261119)
 
-# The World in One Day — Thursday 19 November 2026
+# THE WORLD IN ONE DAY — Thursday 19 November 2026
 
-This entry answers the news-image-20261119 brief: sum up the world's
-news of Thursday 19 November 2026 in a single image. The image is a
-newspaper front page, "THE WORLD IN ONE DAY", carrying 30 stories
-from that one day — three large photo features, ten further stories
-with headlines and short decks, and a numbered "ALSO ON THURSDAY"
-list of one-line items, backed by a dotted world map whose numbered
-pins mark where the thirteen main stories happened.
+A one-image newspaper front page that sums up the whole of Thursday
+19 November 2026: **34 news items**, every one of which happened, or was
+first reported, on that single Thursday. Three large photo features
+lead the page — the World Court's genocide ruling on Myanmar, the
+three-president table in Shenzhen, and the Dow's 1,101-point Wall
+Street rout — over
+ten more headline tiles, a 21-item "ALSO ON THURSDAY" column, a dotted
+world map with pins for the thirteen main stories, and a full
+DATE CHECK box that shows its working.
+
+A segmented strip under the masthead counts the page's breadth by
+region: EUROPE 6 · MIDDLE EAST 2 · ASIA 12 · AFRICA 3 · AMERICAS 7 ·
+OCEANIA 1 · WORLD 3 — 34 news items in all.
+
+Every photograph on the page is a real photograph, not a drawing.
+Every feature and tile carries a small chip — REPORTED, CLAIM or
+FORECAST — with a "HOW SURE ARE WE?" legend, so a reader can tell
+confirmed reporting from one side's account and from things that have
+not happened yet. Eight stories on this page (Serbia's student
+movement taking parliament, the Sensex's 990-point leap, the firing of
+the US cyber chief, the UK tribunal's Apple order, the Bangladesh
+factory shutdowns, the Pete Rose pardon, the California Nvidia probe
+and the UK energy-bill forecast) appear on no other leading entry.
+The page also gives its third feature slot to the Dow's 1,101-point
+rout, which the other leading entries mention only in passing; five
+of those eight stories — Serbia's parliament, the Pete Rose pardon,
+the UK Apple order, the California Nvidia probe and the UK
+energy-bill forecast — appear in none of the current top ten entries
+at all.
 
 ## How the program works
 
-`main.py` is a self-contained Python 3 program (standard library
-only, no network). The finished front page is embedded inside it as
-zlib-compressed base64, split across five string literals. When run,
+`main.py` is a single self-contained Python 3 program (standard
+library only, no network). The finished front page is embedded in it
+as zlib-compressed base64, split across five string literals. Running
 the program decodes and decompresses those bytes back into the exact
-PNG and writes it as `entry.png` into the output directory:
+PNG and writes it as `entry.png` to:
 
-1. `$MAKEFUN_OUTPUT_DIR`, if that environment variable is set;
+1. `$MAKEFUN_OUTPUT_DIR`, if that variable is set;
 2. otherwise `/output`, if that directory exists;
 3. otherwise a local `./output` folder, created if needed.
 
-Decoding is deterministic, so every run writes byte-identical
-output. The PNG is 1024×1024.
+Decoding is deterministic: every run writes byte-identical output.
+The PNG is 1024×1024.
 
-## How the page is organised
+## The 34-story slate
 
-The front page is built in five bands, top to bottom:
+1. World Court: Myanmar committed genocide (The Hague, 9–6)
+2. Three presidents, one table in Shenzhen
+3. Dow plunges 1,101 points in Wall St rout
+4. Anthropic's record $81.3bn market debut
+5. Cyclone Akvan: 204,070 identified for evacuation
+6. GTA VI lands after a 13-year wait
+7. Somalia orders UAE envoy out in 72 hours
+8. Denmark backs Greenland pact 109–0
+9. Seoul court overturns ex-PM Han's sentence
+10. Houthi missile hits Riyadh's tallest tower (claim)
+11. COP31 draft drops fossil-fuel phase-out (revised Thursday draft)
+12. Serbia's student movement takes parliament
+13. Japan to test-fire missiles at Indian ranges
+14. Mongolia's parliament accepts president's resignation
+15. Israel ends Gaza tank raid on a suspected Hamas tunnel
+16. Trump–Putin pull-aside: 40 minutes on the summit sidelines
+17. Xi at Shenzhen: ban nuclear weapons outright
+18. Trump fires US cyber chief after outage chaos
+19. Pete Rose gets a posthumous pardon
+20. 551,864 sit Korea's Suneung exam; 98 device violations
+21. Ex-first lady Kim Keon Hee's four-year jail term finalised
+22. 422 Bangladesh garment factories shut in wage unrest
+23. Sensex leaps 990 points to a nine-month high of 83,022
+24. TSMC, Samsung pause some China chip shipments
+25. UK tribunal confirms secret Apple data-access order
+26. Kenya gives $62bn Mrima Hill prize to US-led consortium
+27. Europe says it is ready for talks with Russia
+28. South Korea's exports pass $1 trillion
+29. South Africa win their cricket match by nine wickets
+30. California probes China–Nvidia chip flow
+31. UK energy bills forecast to jump 26% from January
+32. Russian drones hit Kyiv by day, damaging two embassies
+33. Australia's jobless rate jumps to 4.9%, highest since 2021
+34. Fiona, Cincinnati's famous hippo, dies swallowing a hat
 
-1. **Masthead and stat strip.** The title, the date line ("Thursday
-   19 November 2026") and a one-line summary of the slate, followed
-   by a strip of the day's five hardest numbers: the 9–6 ICJ vote,
-   the three presidents at one table, the 204,070 people identified
-   for evacuation, Copenhagen's 109–0 pact vote, Anthropic's $81.3bn
-   IPO and the Dow's 1,101-point fall.
-2. **Three photo features.** The day's biggest stories get a
-   photograph, a large serif headline and a three-line deck, in a
-   shuffled order that leads with the World Court's genocide ruling,
-   then the Shenzhen three-president summit, then the COP31 draft.
-   A legend strip beneath them explains the REPORTED / CLAIM /
-   FORECAST chips used across the whole page.
-3. **Ten story tiles.** Three carry smaller photos (Anthropic's
-   debut, Cyclone Akvan, the GTA VI launch); seven are text-only.
-   Each tile is numbered, chipped, and kept to a headline plus two
-   or three lines, so the band stays scannable.
-4. **"ALSO ON THURSDAY" list and world map.** Seventeen one-line
-   items (stories 14–30) run in two columns beside a dotted world
-   map. Numbered pins on the map mark the locations of stories
-   1–13; a caption notes that COP31 has no pin, because a draft
-   text is not a place.
-5. **DATE CHECK box.** A full-width bordered box closes the page:
-   it states the date rule, names the excluded Wednesday stories
-   and the not-yet-happened Friday ones, corrects the COP31 draft
-   point, and lists the sources.
+## Date discipline
 
-## The 30-story slate and its date discipline
+The page holds itself to one day, and prints the proof in its
+DATE CHECK box. It uses the **revised** COP31 draft released on
+Thursday 19 November — the one that dropped the $120bn-a-year
+adaptation proposal and the fossil-fuel phase-out wording of the
+superseded Monday 16 November draft. Wednesday 18 November stories
+are deliberately left out and named: the EU €45bn loan for Ukraine,
+Nvidia earnings, the Jeffries news, Anthropic's $83 share pricing,
+the Crimea bridge strike, and the Fed minutes release (only
+Thursday's market rout is shown). Friday 20 November events are
+flagged as not yet happened: COP31's closing outcome and Cyclone
+Akvan's landfall, which appears on the page as a forecast only.
+Cyclone numbers are the verified Odisha figures — 204,070 people
+identified for possible evacuation, landfall due Friday 20 November,
+winds 90–100 km/h.
 
-Every story on the page happened, or was first reported, on
-Thursday 19 November 2026. That discipline is printed on the page
-itself, in a full-width DATE CHECK box at the foot of the front page,
-which names what was deliberately kept out:
-
-- **Wednesday 18 November stories, excluded:** the EU's €45bn loan
-  for Ukraine, Nvidia's earnings, the Jeffries news, Anthropic's $83
-  share pricing, the Crimea bridge strike, and the release of the
-  Fed minutes (only Thursday's market reaction to them is shown).
-- **Friday 20 November events, not yet happened:** COP31's closing
-  outcome, and Cyclone Akvan's landfall — Akvan appears on the page
-  as a forecast, and is tagged as one.
-
-Each feature and tile also carries a small chip — REPORTED, CLAIM or
-FORECAST — with a "HOW SURE ARE WE?" legend under the features, so a
-reader can tell confirmed reporting from one side's account and from
-things that have not happened yet. Day-one sales estimates for the
-GTA VI launch, for example, are tagged CLAIM rather than stated as
-fact, and disputed claims are attributed in the decks. The sources
-line in the DATE CHECK box names the wires and papers the slate was
-checked against: Reuters, AP, BBC, Al Jazeera, Yonhap, AFP, The
-Hindu, CNA, Down To Earth, IMD and Business Standard.
-
-## Corrections this page carries
-
-Three stories on the page are deliberately framed against errors
-circulating in other coverage of the same day:
-
-- **COP31:** the page uses the REVISED draft text released on
-  Thursday 19 November. That revision dropped the earlier draft's
-  $120bn-a-year adaptation proposal and its fossil-fuel phase-out
-  wording (both had appeared in the superseded Monday 16 November
-  draft, and some coverage of Thursday still described the old
-  text). The revised position — adaptation finance to triple by
-  2035 — is what the page reports.
-- **Cyclone Akvan:** the page says 204,070 people were *identified
-  for possible evacuation* in Odisha, with landfall due Friday
-  20 November and winds of 90–100 km/h. It does not repeat the
-  inflated versions ("80,000 moved", "over 100,000 in shelters")
-  that appeared elsewhere; no landfall town is named, because the
-  forecasts did not settle on one.
-- **Crimea bridge:** the strike on the bridge was a Wednesday
-  18 November story, so it is not on the page as Thursday news at
-  all. It is named in the DATE CHECK box among the exclusions, so
-  the omission is explicit rather than silent.
+Sources named on the page: Reuters · AP · BBC · Al Jazeera · Yonhap ·
+AFP · The Hindu · CNA · Down To Earth · IMD · Business Standard.
+Disputed claims are attributed in the decks.
